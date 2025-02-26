@@ -15,7 +15,7 @@ export const Card = ({ title, id, status, column, assignee, start, end, handleDr
         onDragStart={(e) => handleDragStart(e, { title, id, column })}
         className="cursor-grab rounded border  bg-[#FFFFFF] p-3 active:cursor-grabbing "
       >
-        <p className="text-sm text-neutral-500 pb-3">{title}</p>
+        <p className="text-sm text-neutral-500 font-semibold pb-4">{title}</p>
         <p className="text-xs text-neutral-400">Status : {status}</p>
         <div className="flex justify-between">
          <div>
