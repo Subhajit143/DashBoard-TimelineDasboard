@@ -38,7 +38,7 @@ export const TimelineDashBoard = () => {
   console.log("Filtered Data:", filteredMockedSchedulerData); // Debug filtered data
 
   return (
-    <section>
+    <section className="bg-neutral-900 text-neutral-50 min-h-screen p-5">
       <Scheduler
         data={filteredMockedSchedulerData}
         isLoading={false}
@@ -158,6 +158,3 @@ const mockedSchedulerData = [
     ],
   },
 ];
-
-
-

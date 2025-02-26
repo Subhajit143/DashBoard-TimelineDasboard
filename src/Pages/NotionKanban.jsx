@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import {Column} from "../Pages/Column"
 import { BurnBarrel } from "./BurnBarrel";
 import { NavLink } from "react-router-dom";
+import { FaAngleDoubleRight } from "react-icons/fa";
 
 export const CustomKanban = () => {
   return (
@@ -18,7 +19,16 @@ const Board = () => {
   const [cards, setCards] = useState([]);
 
   return (
-    <div className="flex h-full w-full gap-3 overflow-scroll p-12 ">
+    <div className="h-full w-full">
+       <div className="top-0 right-0 p-5 z-10">
+        <NavLink to="/timeline">
+          <button className="bg-gradient-to-r from-amber-400 to-amber-600 text-xl text-white font-semibold py-2 px-4 rounded-lg shadow-lg hover:from-amber-500 hover:to-amber-700 transition-all duration-300 flex items-center space-x-2">
+            <h1>Timeline Dashboard</h1>
+            <FaAngleDoubleRight className="text-xl" />
+          </button>
+        </NavLink>
+      </div>
+      <div className="flex h-full w-full gap-3 overflow-scroll p-5  ">
       <Column
         title="Backlog"
         column="backlog"
@@ -57,11 +67,8 @@ const Board = () => {
       <BurnBarrel setCards={setCards} />
 
 
-      <NavLink to="/timeline" >
-       <button className="bg-amber-50 text-2xl text-neutral-600">
-        Next to the timeline Dashboard
-       </button>
-      </NavLink>
+      
+    </div>
     </div>
   );
 };
