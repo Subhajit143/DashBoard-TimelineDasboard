@@ -2,11 +2,14 @@ import React, { useState } from "react";
 
 import {Column} from "../Pages/Column"
 import { BurnBarrel } from "./BurnBarrel";
+import { NavLink } from "react-router-dom";
 
 export const CustomKanban = () => {
   return (
-    <div className="h-screen w-full bg-[#0075BD] text-neutral-50">
+    <div className="h-screen w-full bg-neutral-900 text-neutral-50">
       <Board />
+
+      
     </div>
   );
 };
@@ -52,6 +55,13 @@ const Board = () => {
         setCards={setCards}
       />
       <BurnBarrel setCards={setCards} />
+
+
+      <NavLink to="/timeline" >
+       <button className="bg-amber-50 text-2xl text-neutral-600">
+        Next to the timeline Dashboard
+       </button>
+      </NavLink>
     </div>
   );
 };
